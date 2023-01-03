@@ -2,7 +2,7 @@
 
 /**
 * _memset - fill in memory with constant byte
-* @s: string pointer
+* @s: string pointers
 * @b: constant byte
 * @n: bytes of the memory
 * Return: Pointer to memory area s
@@ -18,3 +18,4 @@ char *_memset(char *s, char b, unsigned int n)
 	}
 	return (s);
 }
+
