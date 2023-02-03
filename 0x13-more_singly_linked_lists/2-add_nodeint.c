@@ -3,17 +3,21 @@
 #include <stdio.h>
 
 /**
-  *listint_len - Print every element
-  *@h: pointer to listint_t
-  *Return: number of nodes
+  *add_nodeint - add node in the beginning
+  *@head: pointer to head node
+  *@n: new node data
+  *Return: the address of the new element, or NULL if it failed
   */
-size_t listint_len(const listint_t *h)
+listint_t *add_nodeint(listint_t **head, const int n)
 {
-	int i;
+	listint_t *new_node = malloc(sizeof(listint_t));
 
-	for (i = 0; h; i++)
-	{
-		h = h->next;
-	}
-	return (i);
+	if (new_node == NULL)
+		return (NULL);
+
+	new_node->n = n;
+	new_node->next = *head;
+	*head = new_node;
+
+	return (new_node);
 }
